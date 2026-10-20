@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "TUMAR",
+    "slug": "tumar",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "package": "kz.tumar.app",
+      "googleServicesFile": "./google-services.json"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "color": "#E9C176",
+          "defaultChannel": "sos"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "4c26fbb1-8cf8-451b-86a3-5f7fcb82093f"
+      }
+    },
+    "owner": "aibaniii"
+  }
+}

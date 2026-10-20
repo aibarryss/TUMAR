@@ -1,0 +1,12 @@
+node_modules/
+.git/
+.expo/
+dist/
+.env
+.env.*
+*firebase-adminsdk*.json
+service-account*.json
+supabase/
+tests/
+docs/
+*.apk

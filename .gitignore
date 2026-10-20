@@ -1,0 +1,15 @@
+node_modules/
+.expo/
+dist/
+.env
+.env.*
+!.env.example
+*.tsbuildinfo
+npm-debug.log*
+*firebase-adminsdk*.json
+service-account*.json
+google-services.json
+*.jks
+*.keystore
+supabase/.temp/
+*.apk
