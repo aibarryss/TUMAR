@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, Alert, BackHandler, Keyboard, KeyboardAvoidingView, Linking, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Alert, BackHandler, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ContactsScreen } from '../contacts/ContactsScreen';
 import { AccountDialog } from '../../components/AccountDialog';
@@ -133,11 +133,7 @@ export function AlertsScreen({ userId, email, onSignOut, signingOut, authError }
                 <Text style={[styles.title, styles.locationTitle]}>Тестовая точка — Семей</Text></View><IconTile name="flag-outline" round size={40} /></View>
               <View style={styles.inset}><View style={styles.row}><Icon name="information-outline" size={20} color={colors.placeholder} />
                 <Text style={[styles.body, styles.grow]}>Демонстрационная точка. Это не ваше местоположение.</Text></View></View>
-              <Action title="Открыть тестовую точку в картах" icon="navigation-variant-outline" onPress={() => {
-                setMapError('');
-                void Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${detail.latitude},${detail.longitude}`)
-                  .catch(() => setMapError('Не удалось открыть карты. Попробуйте ещё раз.'));
-              }} />
+              <Text style={styles.body}>Карта не используется: точка нужна только для демонстрации сценария.</Text>
             </View>
           </> : <>
             <Text style={styles.body}>{busy ? 'Открываем сигнал…' : 'Не удалось загрузить сигнал. Проверьте ещё раз или вернитесь назад.'}</Text>
@@ -174,7 +170,7 @@ export function AlertsScreen({ userId, email, onSignOut, signingOut, authError }
             <Action title="Проверить сигналы" icon="refresh" onPress={() => { void alerts.refresh(); }} disabled={disabled} />
             <View style={styles.info}><Icon name="bell-off-outline" size={20} color={colors.placeholder} />
               <Text style={[styles.body, styles.grow]}>{push === 'ready' ? 'Уведомления включены на этом телефоне. Сигналы также можно проверить вручную.'
-                : push === 'denied' ? 'Уведомления запрещены. Разрешите их в настройках Android или проверяйте сигналы вручную.'
+                : push === 'denied' ? 'Уведомления за��рещены. Разрешите их в настройках Android или проверяйте сигналы вручную.'
                 : push === 'unavailable' ? 'В Expo Go доступна ручная проверка. Для push установите Android APK.'
                 : push === 'loading' ? 'Подключаем уведомления. Ручная проверка уже доступна.'
                 : 'Не удалось подключить уведомления. Проверьте интернет и откройте приложение снова. Ручная проверка доступна.'}</Text></View>
